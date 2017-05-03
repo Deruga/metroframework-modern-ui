@@ -531,7 +531,9 @@ namespace MetroFramework.Controls
 
         private void BaseTextBoxCursorChanged(object sender, EventArgs e)
         {
+            baseTextBox.CursorChanged -= BaseTextBoxCursorChanged;
             base.OnCursorChanged(e);
+            baseTextBox.CursorChanged += BaseTextBoxCursorChanged;
         }
 
         private void BaseTextBoxContextMenuStripChanged(object sender, EventArgs e)
